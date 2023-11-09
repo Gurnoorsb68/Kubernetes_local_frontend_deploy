@@ -1,0 +1,13 @@
+apiVersion: v1  # version v1 include object pod, so different version have different objects, which is refered as KIND
+kind: Pod #kind basically means the type of object, so here we are using object type of pod
+metadata:
+  name: client-pod  # create object of name client-pod with KIND POD
+  labels:
+    component: web
+spec:
+  containers:
+    - name: client
+      image: gurnoorsb/multi-client
+      ports:
+        - containerPort: 3000
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service  #object type of service is used for networking purpose
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - port: 3050  #port which can be exposed to other node or container
+      targetPort: 3000  #the port which we want to select and expose to outside
+      nodePort: 31515 #the port of the service which we will have  access to
+  selector:
+    component: web
